@@ -6,20 +6,22 @@ import { ProduitService } from '../services/produit.service';
   selector: 'app-add-produit',
   templateUrl: './add-produit.component.html'
 })
-export class AddProduitComponent implements OnInit{
+export class AddProduitComponent implements OnInit {
 
   newProduit = new Produit();
 
-  message!: string; 
-  constructor(private produitService : ProduitService) { }
-ngOnInit(): void {
-  
-}
-addProduit(){
+  message :string | undefined;
+
+  constructor(private produitService: ProduitService) { }
+
+  ngOnInit(): void {
+  }
+
+  addProduit() {
     //console.log(this.newProduit);
     this.produitService.ajouterProduit(this.newProduit);
-    this.message= "Produit"  + this.newProduit.nomProduit + " ajouter avec succés !";
-
+    this.message ="Produit " + this.newProduit.nomProduit + "ajoute avec succes !" ;
   }
+
 }
 
